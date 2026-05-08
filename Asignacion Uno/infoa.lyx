@@ -1,0 +1,2571 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    showstringspaces=false,
+    extendedchars=true,
+    % Esta linea fuerza la traduccion si aun queda algun caracter oculto
+    literate={²}{{$^2$}}1 {ñ}{{\~n}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children no
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize a4
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset VSpace 1cm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% --- PORTADA PERSONALIZADA ---
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement ht
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename ../../Probabilidad y Estadistica/Proyecto/logo_uc.png
+	width 20text%
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Asegúrate de tener el logo de la UC en la carpeta
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+ 
+\series bold
+UNIVERSIDAD DE CARABOBO
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+FACULTAD DE INGENIERIA
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+MAESTRIA EN MATEMÁTICAS Y COMPUTACION
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+large
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Asignación Uno
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+huge
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Análisis de Complejidad Computacional y Benchmarking Integral
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace 1cm
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+large
+\end_layout
+
+\end_inset
+
+ Estudio Comparativo:
+ Búsqueda y Ordenamiento
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 2.5cm
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright}
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Autor:
+
+\series default
+ Ing.
+ Melvin E.
+ Padilla
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+Cátedra:
+
+\series default
+ Diseño de algoritmos
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+Profesor:
+
+\series default
+ Alejandro Bolivar
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 2cm
+\end_inset
+
+ 
+\begin_inset VSpace vfill
+\end_inset
+
+
+\series bold
+Infraestructura de Cómputo:
+
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Lenovo IdeaPad Gaming 3 | AMD Ryzen™ 7 4800H (16 Threads)
+\begin_inset Newline newline
+\end_inset
+
+ Ubuntu 24.04.4 LTS | Spyder IDE
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+line
+\end_layout
+
+\end_inset
+
+(1,0)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+400
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace 0.5cm
+\end_inset
+
+ Valencia,
+ Mayo de 2026 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% --- FIN DE LA PORTADA ---
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Este informe documenta la evaluación empírica de algoritmos fundamentales de búsqueda y ordenamiento.
+ El estudio abarca desde métodos de fuerza bruta (
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+) hasta algoritmos de tipo 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+Divide y Vencerás
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Formula $O(n\log n)$
+\end_inset
+
+).
+ A través de un análisis de regresión sobre tiempos de ejecución reales,
+ se valida la jerarquía de eficiencia de la Notación Big O,
+ demostrando por qué la elección algorítmica es crítica en el manejo de grandes volúmenes de datos.
+ 
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El diseño de software eficiente requiere comprender cómo el tiempo de ejecución de un programa se escala con el tamaño de los datos de entrada (
+\begin_inset Formula $n$
+\end_inset
+
+).
+ En este informe,
+ evaluamos métodos de búsqueda y ordenamiento fundamentales,
+ contrastando sus implementaciones y resultados experimentales.
+\end_layout
+
+\begin_layout Subsection
+Complejidades Evaluadas
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Orden Logarítmico (
+\begin_inset Formula $O(\log n)$
+\end_inset
+
+):
+
+\series default
+ Representado por la búsqueda binaria.
+ Su crecimiento es extremadamente lento,
+ lo que lo hace ideal para datasets masivos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Orden Lineal (
+\begin_inset Formula $O(n)$
+\end_inset
+
+):
+
+\series default
+ Representado por la búsqueda lineal.
+ El tiempo de ejecución escala 1:1 con el tamaño de los datos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Orden Cuasi-lineal (
+\begin_inset Formula $O(n\log n)$
+\end_inset
+
+):
+
+\series default
+ Complejidad característica de 
+\shape italic
+QuickSort
+\shape default
+.
+ Es la eficiencia óptima para algoritmos de ordenamiento basados en comparaciones.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Orden Cuadrático (
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+):
+
+\series default
+ Métodos de 
+\shape italic
+Burbuja
+\shape default
+ y 
+\shape italic
+Selección
+\shape default
+.
+ El tiempo aumenta al cuadrado respecto a 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ limitando su uso a datasets pequeños.
+ 
+\end_layout
+
+\begin_layout Section
+Metodología de la Prueba
+\end_layout
+
+\begin_layout Standard
+Se implementó un entorno de pruebas en Python utilizando el generador de números aleatorios 
+\family typewriter
+random.randint
+\family default
+ para crear datasets de diversos tamaños:
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Búsqueda:
+
+\series default
+ Hasta 
+\begin_inset Formula $2\times10^{6}$
+\end_inset
+
+ elementos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ordenamiento Eficiente:
+
+\series default
+ Hasta 
+\begin_inset Formula $10^{5}$
+\end_inset
+
+ elementos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ordenamiento Lento:
+
+\series default
+ Hasta 
+\begin_inset Formula $5\times10^{3}$
+\end_inset
+
+ elementos.
+ 
+\end_layout
+
+\begin_layout Section
+Análisis Detallado de Algoritmos de Búsqueda
+\end_layout
+
+\begin_layout Subsection
+Búsqueda Lineal (
+\begin_inset Formula $O(n)$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Este algoritmo recorre secuencialmente la lista hasta encontrar el elemento objetivo o finalizar el dataset.
+ Su complejidad es directamente proporcional al tamaño de la lista.
+ 
+\begin_inset listings
+lstparams "language=Python,caption={Implementación de Búsqueda Lineal}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def busqueda_lineal(lista,
+ objetivo):
+\end_layout
+
+\begin_layout Plain Layout
+
+    for i in range(len(lista)):
+\end_layout
+
+\begin_layout Plain Layout
+
+        if lista[i] == objetivo:
+\end_layout
+
+\begin_layout Plain Layout
+
+            return i # Exito
+\end_layout
+
+\begin_layout Plain Layout
+
+    return -1 # Peor caso:
+ n comparaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Búsqueda Binaria (
+\begin_inset Formula $O(\log n)$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+La búsqueda binaria reduce el espacio de búsqueda a la mitad en cada iteración.
+ Matemáticamente,
+ el número de pasos necesarios para encontrar un elemento en una lista de tamaño 
+\begin_inset Formula $n$
+\end_inset
+
+ se define como 
+\begin_inset Formula $k=\log_{2}(n)$
+\end_inset
+
+.
+ 
+\begin_inset listings
+lstparams "language=Python,caption={Implementación de Búsqueda Binaria}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def busqueda_binaria(lista,
+ objetivo):
+\end_layout
+
+\begin_layout Plain Layout
+
+    bajo,
+ alto = 0,
+ len(lista) - 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    while bajo <= alto:
+\end_layout
+
+\begin_layout Plain Layout
+
+        medio = (bajo + alto) // 2
+\end_layout
+
+\begin_layout Plain Layout
+
+        if lista[medio] == objetivo:
+\end_layout
+
+\begin_layout Plain Layout
+
+            return medio
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif lista[medio] < objetivo:
+\end_layout
+
+\begin_layout Plain Layout
+
+            bajo = medio + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+        else:
+\end_layout
+
+\begin_layout Plain Layout
+
+            alto = medio - 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    return -1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análisis Detallado de Algoritmos de Ordenamiento
+\end_layout
+
+\begin_layout Subsection
+Ordenamiento Burbuja (
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Funciona comparando pares de elementos adyacentes e intercambiándolos si están en el orden incorrecto.
+ Requiere dos bucles anidados,
+ lo que resulta en 
+\begin_inset Formula $(n-1)+(n-2)+\dots+1=\frac{n(n-1)}{2}$
+\end_inset
+
+ comparaciones.
+ 
+\begin_inset listings
+lstparams "language=Python,caption={Implementación de Ordenamiento Burbuja}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def ordenamiento_burbuja(lista):
+\end_layout
+
+\begin_layout Plain Layout
+
+    n = len(lista)
+\end_layout
+
+\begin_layout Plain Layout
+
+    for i in range(n):
+\end_layout
+
+\begin_layout Plain Layout
+
+        for j in range(0,
+ n - i - 1):
+\end_layout
+
+\begin_layout Plain Layout
+
+            if lista[j] > lista[j + 1]:
+\end_layout
+
+\begin_layout Plain Layout
+
+                lista[j],
+ lista[j + 1] = lista[j + 1],
+ lista[j]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+QuickSort (
+\begin_inset Formula $O(n\log n)$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Este es un algoritmo de tipo 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+Divide y Vencerás
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+.
+ Utiliza un pivote para particionar el problema en sub-problemas más pequeños.
+ Su eficiencia radica en que reduce drásticamente el número de comparaciones totales frente a los métodos cuadráticos.
+ 
+\begin_inset listings
+lstparams "language=Python,caption={Implementación de QuickSort Eficiente}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def quicksort(lista):
+\end_layout
+
+\begin_layout Plain Layout
+
+    if len(lista) <= 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+        return lista
+\end_layout
+
+\begin_layout Plain Layout
+
+    pivote = lista[len(lista) // 2]
+\end_layout
+
+\begin_layout Plain Layout
+
+    izq = [x for x in lista if x < pivote]
+\end_layout
+
+\begin_layout Plain Layout
+
+    centro = [x for x in lista if x == pivote]
+\end_layout
+
+\begin_layout Plain Layout
+
+    der = [x for x in lista if x > pivote]
+\end_layout
+
+\begin_layout Plain Layout
+
+    return quicksort(izq) + centro + quicksort(der)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resultados y Comparativa de Complejidad
+\end_layout
+
+\begin_layout Standard
+Los tiempos obtenidos en el benchmarking se resumen en la siguiente tabla de crecimiento relativo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparativa de Tiempos de Ejecución Observados
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="none" valignment="top" special="@{}l">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special="l@{}">
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Burbuja (
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+QuickSort (
+\begin_inset Formula $O(n\log n)$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Relación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0005s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00001s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.045s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00015s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.25s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0008s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,562x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10,000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.10s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0017s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,000x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análisis de Resultados Empíricos
+\end_layout
+
+\begin_layout Subsection
+Resultados de Búsqueda
+\end_layout
+
+\begin_layout Standard
+En las pruebas realizadas,
+ la búsqueda binaria mantuvo tiempos cercanos a 0.0s incluso con 2 millones de datos.
+ Por el contrario,
+ la búsqueda lineal mostró una pendiente ascendente constante,
+ sin diferencias significativas entre datos ordenados y desordenados en términos de complejidad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename busqueda.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rendimiento de Búsqueda:
+ Lineal vs Binaria (Observar el comportamiento plano de 
+\begin_inset Formula $O(\log n)$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados de Ordenamiento
+\end_layout
+
+\begin_layout Standard
+La comparativa entre 
+\shape italic
+Burbuja
+\shape default
+ y 
+\shape italic
+QuickSort
+\shape default
+ fue el hallazgo más notable.
+ Mientras que 
+\shape italic
+Burbuja
+\shape default
+ superó los 3 segundos para solo 5,000 elementos,
+ 
+\shape italic
+QuickSort
+\shape default
+ procesó 100,000 elementos en menos de 0.1 segundos,
+ demostrando empíricamente la superioridad de 
+\begin_inset Formula $O(n\log n)$
+\end_inset
+
+ sobre 
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename ordenamiento.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rendimiento de Ordenamiento:
+ Nótese el crecimiento exponencial de la Burbuja frente a la estabilidad de QuickSort.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+El análisis confirma que para grandes volúmenes de datos,
+ la complejidad asintótica (
+\begin_inset Formula $O$
+\end_inset
+
+) es el factor determinante del éxito de una aplicación.
+ Mientras que el hardware puede compensar ineficiencias en datasets pequeños (
+\begin_inset Formula $n<100$
+\end_inset
+
+),
+ en la escala de 
+\begin_inset Formula $n=1,000,000$
+\end_inset
+
+,
+ solo algoritmos eficientes como la búsqueda binaria o QuickSort son viables.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Escalabilidad:
+
+\series default
+ La arquitectura de software moderna debe priorizar algoritmos logarítmicos o cuasi-lineales para garantizar la escalabilidad.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Optimización:
+
+\series default
+ El uso de 
+\shape italic
+QuickSort
+\shape default
+ reduce el tiempo de cómputo en varios órdenes de magnitud comparado con métodos tradicionales.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hardware vs.
+ Software:
+
+\series default
+ A pesar de contar con hardware potente,
+ un algoritmo ineficiente (
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+) colapsará rápidamente frente al crecimiento de datos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%dummy comment inserted by tex2lyx to ensure that this paragraph is not empty
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Anexo:
+ Script en Python
+\end_layout
+
+\begin_layout Standard
+Código utilizado para al análisis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,caption={Implementación de Ordenamiento Burbuja}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/usr/bin/env python3
+\end_layout
+
+\begin_layout Plain Layout
+
+# -*- coding:
+ utf-8 -*-
+\end_layout
+
+\begin_layout Plain Layout
+
+"""
+\end_layout
+
+\begin_layout Plain Layout
+
+Created on Thu May  7 22:46:34 2026
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@author:
+ meppadilla
+\end_layout
+
+\begin_layout Plain Layout
+
+"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import time
+\end_layout
+
+\begin_layout Plain Layout
+
+import random
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+from scipy.optimize import curve_fit
+\end_layout
+
+\begin_layout Plain Layout
+
+import sys
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Optimización para manejar la recursividad de QuickSort en datasets grandes
+\end_layout
+
+\begin_layout Plain Layout
+
+sys.setrecursionlimit(200000)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# 1.
+ ALGORITMOS DE BÚSQUEDA
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+def busqueda_lineal(lista,
+ objetivo):
+\end_layout
+
+\begin_layout Plain Layout
+
+    for i in range(len(lista)):
+\end_layout
+
+\begin_layout Plain Layout
+
+        if lista[i] == objetivo:
+\end_layout
+
+\begin_layout Plain Layout
+
+            return i
+\end_layout
+
+\begin_layout Plain Layout
+
+    return -1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def busqueda_binaria(lista,
+ objetivo):
+\end_layout
+
+\begin_layout Plain Layout
+
+    bajo,
+ alto = 0,
+ len(lista) - 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    while bajo <= alto:
+\end_layout
+
+\begin_layout Plain Layout
+
+        medio = (bajo + alto) // 2
+\end_layout
+
+\begin_layout Plain Layout
+
+        if lista[medio] == objetivo:
+\end_layout
+
+\begin_layout Plain Layout
+
+            return medio
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif lista[medio] < objetivo:
+\end_layout
+
+\begin_layout Plain Layout
+
+            bajo = medio + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+        else:
+\end_layout
+
+\begin_layout Plain Layout
+
+            alto = medio - 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    return -1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# 2.
+ ALGORITMOS DE ORDENAMIENTO
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+def ordenamiento_burbuja(lista):
+\end_layout
+
+\begin_layout Plain Layout
+
+    n = len(lista)
+\end_layout
+
+\begin_layout Plain Layout
+
+    for i in range(n):
+\end_layout
+
+\begin_layout Plain Layout
+
+        for j in range(0,
+ n - i - 1):
+\end_layout
+
+\begin_layout Plain Layout
+
+            if lista[j] > lista[j + 1]:
+\end_layout
+
+\begin_layout Plain Layout
+
+                lista[j],
+ lista[j + 1] = lista[j + 1],
+ lista[j]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def ordenamiento_seleccion(lista):
+\end_layout
+
+\begin_layout Plain Layout
+
+    n = len(lista)
+\end_layout
+
+\begin_layout Plain Layout
+
+    for i in range(n):
+\end_layout
+
+\begin_layout Plain Layout
+
+        min_idx = i
+\end_layout
+
+\begin_layout Plain Layout
+
+        for j in range(i + 1,
+ n):
+\end_layout
+
+\begin_layout Plain Layout
+
+            if lista[min_idx] > lista[j]:
+\end_layout
+
+\begin_layout Plain Layout
+
+                min_idx = j
+\end_layout
+
+\begin_layout Plain Layout
+
+        lista[i],
+ lista[min_idx] = lista[min_idx],
+ lista[i]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def quicksort(lista):
+\end_layout
+
+\begin_layout Plain Layout
+
+    if len(lista) <= 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+        return lista
+\end_layout
+
+\begin_layout Plain Layout
+
+    pivote = lista[len(lista) // 2]
+\end_layout
+
+\begin_layout Plain Layout
+
+    izq = [x for x in lista if x < pivote]
+\end_layout
+
+\begin_layout Plain Layout
+
+    centro = [x for x in lista if x == pivote]
+\end_layout
+
+\begin_layout Plain Layout
+
+    der = [x for x in lista if x > pivote]
+\end_layout
+
+\begin_layout Plain Layout
+
+    return quicksort(izq) + centro + quicksort(der)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# 3.
+ LÓGICA DE ESTIMACIÓN BIG O
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+def func_lineal(n,
+ a,
+ b):
+ return a * n + b
+\end_layout
+
+\begin_layout Plain Layout
+
+def func_cuadratica(n,
+ a,
+ b):
+ return a * (n**2) + b
+\end_layout
+
+\begin_layout Plain Layout
+
+def func_logaritmica(n,
+ a,
+ b):
+ return a * np.log2(n + 1) + b
+\end_layout
+
+\begin_layout Plain Layout
+
+def func_nlogn(n,
+ a,
+ b):
+ return a * n * np.log2(n + 1) + b
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def estimar_big_o(n_vals,
+ t_vals,
+ tipo="busqueda"):
+\end_layout
+
+\begin_layout Plain Layout
+
+    n_pts = np.array(n_vals)
+\end_layout
+
+\begin_layout Plain Layout
+
+    t_pts = np.array(t_vals)
+\end_layout
+
+\begin_layout Plain Layout
+
+    try:
+\end_layout
+
+\begin_layout Plain Layout
+
+        popt_lin,
+ _ = curve_fit(func_lineal,
+ n_pts,
+ t_pts)
+\end_layout
+
+\begin_layout Plain Layout
+
+        err_lin = np.sum((func_lineal(n_pts,
+ *popt_lin) - t_pts)**2)
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+        if tipo == "busqueda":
+\end_layout
+
+\begin_layout Plain Layout
+
+            popt_log,
+ _ = curve_fit(func_logaritmica,
+ n_pts,
+ t_pts)
+\end_layout
+
+\begin_layout Plain Layout
+
+            err_log = np.sum((func_logaritmica(n_pts,
+ *popt_log) - t_pts)**2)
+\end_layout
+
+\begin_layout Plain Layout
+
+            return "O(log n)" if err_log < err_lin else "O(n)"
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif tipo == "lento":
+\end_layout
+
+\begin_layout Plain Layout
+
+            popt_cua,
+ _ = curve_fit(func_cuadratica,
+ n_pts,
+ t_pts)
+\end_layout
+
+\begin_layout Plain Layout
+
+            err_cua = np.sum((func_cuadratica(n_pts,
+ *popt_cua) - t_pts)**2)
+\end_layout
+
+\begin_layout Plain Layout
+
+            return "O(n^2)" if err_cua < err_lin else "O(n)"
+\end_layout
+
+\begin_layout Plain Layout
+
+        else:
+ # rapido
+\end_layout
+
+\begin_layout Plain Layout
+
+            popt_nlogn,
+ _ = curve_fit(func_nlogn,
+ n_pts,
+ t_pts)
+\end_layout
+
+\begin_layout Plain Layout
+
+            err_nlogn = np.sum((func_nlogn(n_pts,
+ *popt_nlogn) - t_pts)**2)
+\end_layout
+
+\begin_layout Plain Layout
+
+            return "O(n log n)" if err_nlogn < err_lin else "O(n)"
+\end_layout
+
+\begin_layout Plain Layout
+
+    except:
+\end_layout
+
+\begin_layout Plain Layout
+
+        return "Indeterminado"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# 4.
+ CONFIGURACIÓN Y EJECUCIÓN
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+n_busqueda = [100,
+ 1000,
+ 10000,
+ 100000,
+ 500000,
+ 1000000,
+ 2000000]
+\end_layout
+
+\begin_layout Plain Layout
+
+n_ord_lento = [10,
+ 100,
+ 500,
+ 1000,
+ 2500,
+ 5000]
+\end_layout
+
+\begin_layout Plain Layout
+
+n_ord_rapido = [10,
+ 100,
+ 1000,
+ 5000,
+ 10000,
+ 50000,
+ 100000]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+resultados = {
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Lin_Des":
+ [],
+ "Lin_Ord":
+ [],
+ "Binaria":
+ [],
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Burbuja":
+ [],
+ "Seleccion":
+ [],
+ "QuickSort":
+ []
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print("Ejecutando Benchmarking Integral...")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Pruebas de Búsqueda
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in n_busqueda:
+\end_layout
+
+\begin_layout Plain Layout
+
+    data = [random.randint(0,
+ n*10) for _ in range(n)]
+\end_layout
+
+\begin_layout Plain Layout
+
+    target = -1
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    t0 = time.perf_counter()
+\end_layout
+
+\begin_layout Plain Layout
+
+    busqueda_lineal(data,
+ target)
+\end_layout
+
+\begin_layout Plain Layout
+
+    resultados["Lin_Des"].append(time.perf_counter() - t0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    data.sort()
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    t0 = time.perf_counter()
+\end_layout
+
+\begin_layout Plain Layout
+
+    busqueda_lineal(data,
+ target)
+\end_layout
+
+\begin_layout Plain Layout
+
+    resultados["Lin_Ord"].append(time.perf_counter() - t0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    t0 = time.perf_counter()
+\end_layout
+
+\begin_layout Plain Layout
+
+    busqueda_binaria(data,
+ target)
+\end_layout
+
+\begin_layout Plain Layout
+
+    resultados["Binaria"].append(time.perf_counter() - t0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Pruebas de Ordenamiento
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in n_ord_lento:
+\end_layout
+
+\begin_layout Plain Layout
+
+    data = [random.randint(0,
+ n*10) for _ in range(n)]
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Burbuja
+\end_layout
+
+\begin_layout Plain Layout
+
+    c1 = data.copy();
+ t0 = time.perf_counter()
+\end_layout
+
+\begin_layout Plain Layout
+
+    ordenamiento_burbuja(c1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    resultados["Burbuja"].append(time.perf_counter() - t0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Selección
+\end_layout
+
+\begin_layout Plain Layout
+
+    c2 = data.copy();
+ t0 = time.perf_counter()
+\end_layout
+
+\begin_layout Plain Layout
+
+    ordenamiento_seleccion(c2)
+\end_layout
+
+\begin_layout Plain Layout
+
+    resultados["Seleccion"].append(time.perf_counter() - t0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in n_ord_rapido:
+\end_layout
+
+\begin_layout Plain Layout
+
+    data = [random.randint(0,
+ n*10) for _ in range(n)]
+\end_layout
+
+\begin_layout Plain Layout
+
+    t0 = time.perf_counter()
+\end_layout
+
+\begin_layout Plain Layout
+
+    quicksort(data)
+\end_layout
+
+\begin_layout Plain Layout
+
+    resultados["QuickSort"].append(time.perf_counter() - t0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# 5.
+ RESULTADOS Y GRÁFICAS
+\end_layout
+
+\begin_layout Plain Layout
+
+# ==========================================
+\end_layout
+
+\begin_layout Plain Layout
+
+print("
+\backslash
+n" + "="*45)
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"{'Algoritmo':<25} | {'Big O Estimado':<15}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print("-" * 45)
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"{'Búsqueda Lineal (Des)':<25} | {estimar_big_o(n_busqueda,
+ resultados['Lin_Des'],
+ 'busqueda')}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"{'Búsqueda Binaria':<25} | {estimar_big_o(n_busqueda,
+ resultados['Binaria'],
+ 'busqueda')}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"{'Ordenamiento Burbuja':<25} | {estimar_big_o(n_ord_lento,
+ resultados['Burbuja'],
+ 'lento')}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"{'Ordenamiento Selección':<25} | {estimar_big_o(n_ord_lento,
+ resultados['Seleccion'],
+ 'lento')}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"{'QuickSort':<25} | {estimar_big_o(n_ord_rapido,
+ resultados['QuickSort'],
+ 'rapido')}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print("="*45)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ (ax1,
+ ax2) = plt.subplots(1,
+ 2,
+ figsize=(16,
+ 6))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.plot(n_busqueda,
+ resultados["Lin_Des"],
+ 'o-',
+ label="Lineal (Desordenado)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.plot(n_busqueda,
+ resultados["Lin_Ord"],
+ 's-',
+ label="Lineal (Ordenado)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.plot(n_busqueda,
+ resultados["Binaria"],
+ 'd-',
+ label="Binaria")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.set_title("Comparativa de Búsqueda")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.set_xlabel("n")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.set_ylabel("Tiempo (s)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax1.legend();
+ ax1.grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.plot(n_ord_lento,
+ resultados["Burbuja"],
+ 'r-o',
+ label="Burbuja O(n²)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.plot(n_ord_lento,
+ resultados["Seleccion"],
+ 'g-s',
+ label="Selección O(n²)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.plot(n_ord_rapido,
+ resultados["QuickSort"],
+ 'b-d',
+ label="QuickSort O(n log n)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.set_title("Comparativa de Ordenamiento")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.set_xlabel("n")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.set_ylabel("Tiempo (s)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax2.legend();
+ ax2.grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.show()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
