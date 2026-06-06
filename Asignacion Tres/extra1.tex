@@ -1,0 +1,153 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Configuración de colores profesionales
+\definecolor{darkblue}{rgb}{0.0, 0.2, 0.4}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.96}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=cyan,
+}
+
+% Configuración del estilo de código para Python
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{darkblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    extendedchars=true,
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ñ}{{\~N}}1 {¿}{{\textquestiondown}}1 {¡}{{\textexclamdown}}1
+}
+
+\lstset{style=mystyle}
+
+\title{\textbf{\color{darkblue}Redes Neuronales de Grafos (GNN): Convoluciones Topológicas}}
+\author{Documentación Técnica de Inteligencia Artificial Industrial}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\noindent Las Redes Neuronales de Grafos (GNN) representan el punto exacto donde la topología matemática clásica se fusiona con los modelos predictivos multidimensionales.
+
+Cuando aplicamos \textit{Deep Learning} para el modelado de diagnósticos en infraestructuras físicas (como predecir el desgaste de rodamientos en una batería de bombas), los modelos tradicionales (como las redes neuronales densas o CNNs) fallan porque asumen que los datos son independientes o están en una cuadrícula perfecta.
+
+Las GNNs, y específicamente las Redes Convolucionales de Grafos (GCN), entienden que si un motor operando a 460V comienza a vibrar anómalamente, esa vibración se propagará mecánicamente a través de las tuberías hacia los equipos adyacentes. La topología dicta la influencia.
+
+\section{Desglosando la Ecuación Matemática (Paso de Mensajes)}
+
+La ecuación que tienes en tu documento captura elegantemente cómo la información fluye por la red en una sola capa de la red neuronal:
+
+\begin{equation}
+    H^{(l+1)} = \sigma \left( \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{(l)} W^{(l)} \right)
+\end{equation}
+
+Vamos a diseccionarla pieza por pieza para entender su lógica geométrica:
+
+\begin{itemize}
+    \item \textbf{$H^{(l)}$ (Matriz de Características):} Es el estado actual de tus nodos. Si tienes $5$ motores y estás midiendo $2$ variables (temperatura y vibración), esta es una matriz de $5 \times 2$.
+    \item \textbf{$W^{(l)}$ (Matriz de Pesos):} Son los parámetros entrenables. Es la parte que la inteligencia artificial ajusta durante el entrenamiento para aprender qué características son realmente importantes para predecir un fallo.
+    \item \textbf{$\tilde{A}$ (Matriz de Adyacencia con Autoenlaces):} Normalmente, la matriz de adyacencia $A$ solo te dice quién está conectado con quién. Pero al actualizar el estado de un equipo, no solo te importa lo que le pasa a sus vecinos, ¡también te importa su propio estado actual! Por eso se le suma la matriz identidad ($\tilde{A} = A + I$).
+    \item \textbf{$\tilde{D}^{-\frac{1}{2}} \dots \tilde{D}^{-\frac{1}{2}}$ (Normalización Simétrica):} Este es el secreto matemático para que la red no colapse. Si un colector principal está conectado a 10 bombas, al sumar la información de todas ellas, sus valores numéricos explotarían en comparación con una bomba aislada. Dividir por la raíz cuadrada de los grados ($\tilde{D}$) de ambos nodos conectados asegura que el flujo de información se normalice de manera justa, amortiguando la influencia de los nodos masivamente conectados.
+    \item \textbf{$\sigma$ (Activación):} Una función no lineal (como ReLU) que permite a la red aprender patrones complejos, no solo relaciones lineales simples.
+\end{itemize}
+
+\section{Implementación en Python: Construyendo la Ecuación 7 desde Cero}
+
+Aunque librerías como \textit{PyTorch Geometric} hacen esto con una sola línea de código en producción, la mejor forma de entender la arquitectura profunda es programar la matriz exacta usando tensores nativos de PyTorch.
+
+Vamos a simular un paso de mensaje convolucional en una pequeña red de tres equipos interconectados.
+
+\begin{lstlisting}[language=Python, caption={Paso de mensajes en una GCN usando PyTorch}]
+import torch
+import torch.nn as nn
+import numpy as np
+
+# --- 1. Definicion de la Topologia ---
+# Grafo de 3 nodos (0: Tablero, 1: Motor A, 2: Motor B)
+# Conexiones: Tablero <-> Motor A, Motor A <-> Motor B
+A = torch.tensor([[0., 1., 0.],
+                  [1., 0., 1.],
+                  [0., 1., 0.]])
+
+# Anadimos auto-enlaces (Matriz Identidad) para que cada nodo recuerde su propio estado
+I = torch.eye(3)
+A_tilde = A + I
+
+# --- 2. Normalizacion Simetrica ---
+# Calculamos el grado de cada nodo (cuantas conexiones tiene, incluyendo el autoenlace)
+grados = A_tilde.sum(dim=1)
+
+# Matriz diagonal D_tilde^(-1/2)
+D_tilde_inv_sqrt = torch.diag(torch.pow(grados, -0.5))
+
+# Calculamos el operador de paso de mensajes: D^(-1/2) * A_tilde * D^(-1/2)
+operador_convolucional = torch.matmul(torch.matmul(D_tilde_inv_sqrt, A_tilde), D_tilde_inv_sqrt)
+
+print("Operador Convolucional Normalizado:")
+print(np.round(operador_convolucional.numpy(), 3))
+
+# --- 3. Datos de los Nodos (Matriz H) ---
+# Supongamos 2 caracteristicas por equipo: [Temperatura, Nivel de Vibracion]
+H_l = torch.tensor([[45.0, 0.1],  # Tablero (frio, sin vibracion)
+                    [80.0, 2.5],  # Motor A (caliente, vibrando mucho)
+                    [50.0, 0.5]]) # Motor B (normal)
+
+# --- 4. Parametros Entrenables (Matriz W) ---
+# Proyectamos de 2 caracteristicas a 3 caracteristicas latentes (ocultas)
+W_l = nn.Parameter(torch.rand(2, 3))
+
+# --- 5. APLICACION DE LA ECUACION (7) ---
+# H^(l+1) = sigma( D^(-1/2) A_tilde D^(-1/2) H^(l) W^(l) )
+
+# a. Paso de mensajes (Los nodos mezclan su estado con sus vecinos)
+mezcla_vecinal = torch.matmul(operador_convolucional, H_l)
+
+# b. Transformacion lineal (Aprendizaje)
+transformacion = torch.matmul(mezcla_vecinal, W_l)
+
+# c. Activacion no lineal (sigma)
+H_l_mas_1 = torch.relu(transformacion)
+
+print("\nMatriz de Caracteristicas de Entrada H^(l):")
+print(H_l)
+print("\nNuevo Estado Oculto de los Nodos H^(l+1):")
+print(H_l_mas_1.detach().numpy())
+\end{lstlisting}
+
+\section{¿Qué está sucediendo aquí físicamente?}
+
+Si observas la \texttt{mezcla\_vecinal} antes de la transformación lineal, verías que el Motor B (que originalmente estaba a $50^\circ$C y $0.5$ de vibración) absorbió matemáticamente parte de las características del Motor A. La red neuronal acaba de modelar la transferencia térmica y armónica a través del acople estructural.
+
+Al apilar múltiples capas (repitiendo esta ecuación), el nodo $0$ recibe información del nodo $2$ a través del nodo $1$. Es decir, con $k$ capas convolucionales, cada nodo adquiere ``conciencia'' geométrica de todos los componentes que están a $k$ saltos de distancia.
+
+Para consolidar esta abstracción matemática, he diseñado un simulador donde puedes observar cómo los valores numéricos se promedian y propagan por la red topológica en cada iteración del paso de mensajes.
+
+\end{document}

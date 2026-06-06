@@ -1,0 +1,701 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+
+
+% Configuración de colores profesionales
+\definecolor{darkblue}{rgb}{0.0, 0.2, 0.4}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.96}
+
+
+
+% Configuración del estilo de código para Python
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{darkblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    extendedchars=true,
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ñ}{{\~N}}1 {¿}{{\textquestiondown}}1 {¡}{{\textexclamdown}}1
+}
+
+\lstset{style=mystyle}
+
+\title{\textbf{\color{darkblue}Redes Neuronales de Grafos (GNN): Convoluciones Topológicas}}
+\author{Documentación Técnica de Inteligencia Artificial Industrial}
+\date{\today}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children no
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref section
+\pdf_pdfusetitle false
+\pdf_quoted_options "linkcolor=darkblue,urlcolor=cyan,"
+\papersize a4
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Las Redes Neuronales de Grafos (GNN) representan el punto exacto donde la topología matemática clásica se fusiona con los modelos predictivos multidimensionales.
+\end_layout
+
+\begin_layout Standard
+Cuando aplicamos 
+\shape italic
+Deep Learning
+\shape default
+ para el modelado de diagnósticos en infraestructuras físicas (como predecir el desgaste de rodamientos en una batería de bombas),
+ los modelos tradicionales (como las redes neuronales densas o CNNs) fallan porque asumen que los datos son independientes o están en una cuadrícula perfecta.
+\end_layout
+
+\begin_layout Standard
+Las GNNs,
+ y específicamente las Redes Convolucionales de Grafos (GCN),
+ entienden que si un motor operando a 460V comienza a vibrar anómalamente,
+ esa vibración se propagará mecánicamente a través de las tuberías hacia los equipos adyacentes.
+ La topología dicta la influencia.
+\end_layout
+
+\begin_layout Subsubsection
+Desglosando la Ecuación Matemática (Paso de Mensajes)
+\end_layout
+
+\begin_layout Standard
+La ecuación que tienes en tu documento captura elegantemente cómo la información fluye por la red en una sola capa de la red neuronal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{(l+1)}=\sigma\left(\tilde{D}^{-\frac{1}{2}}\tilde{A}\tilde{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vamos a diseccionarla pieza por pieza para entender su lógica geométrica:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $H^{(l)}$
+\end_inset
+
+ (Matriz de Características):
+
+\series default
+ Es el estado actual de tus nodos.
+ Si tienes 
+\begin_inset Formula $5$
+\end_inset
+
+ motores y estás midiendo 
+\begin_inset Formula $2$
+\end_inset
+
+ variables (temperatura y vibración),
+ esta es una matriz de 
+\begin_inset Formula $5\times2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $W^{(l)}$
+\end_inset
+
+ (Matriz de Pesos):
+
+\series default
+ Son los parámetros entrenables.
+ Es la parte que la inteligencia artificial ajusta durante el entrenamiento para aprender qué características son realmente importantes para predecir un fallo.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $\tilde{A}$
+\end_inset
+
+ (Matriz de Adyacencia con Autoenlaces):
+
+\series default
+ Normalmente,
+ la matriz de adyacencia 
+\begin_inset Formula $A$
+\end_inset
+
+ solo te dice quién está conectado con quién.
+ Pero al actualizar el estado de un equipo,
+ no solo te importa lo que le pasa a sus vecinos,
+ ¡también te importa su propio estado actual!
+ Por eso se le suma la matriz identidad (
+\begin_inset Formula $\tilde{A}=A+I$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $\tilde{D}^{-\frac{1}{2}}\dots\tilde{D}^{-\frac{1}{2}}$
+\end_inset
+
+ (Normalización Simétrica):
+
+\series default
+ Este es el secreto matemático para que la red no colapse.
+ Si un colector principal está conectado a 10 bombas,
+ al sumar la información de todas ellas,
+ sus valores numéricos explotarían en comparación con una bomba aislada.
+ Dividir por la raíz cuadrada de los grados (
+\begin_inset Formula $\tilde{D}$
+\end_inset
+
+) de ambos nodos conectados asegura que el flujo de información se normalice de manera justa,
+ amortiguando la influencia de los nodos masivamente conectados.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $\sigma$
+\end_inset
+
+ (Activación):
+
+\series default
+ Una función no lineal (como ReLU) que permite a la red aprender patrones complejos,
+ no solo relaciones lineales simples.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Implementación en Python:
+ Construyendo la Ecuación 7 desde Cero
+\end_layout
+
+\begin_layout Standard
+Aunque librerías como 
+\shape italic
+PyTorch Geometric
+\shape default
+ hacen esto con una sola línea de código en producción,
+ la mejor forma de entender la arquitectura profunda es programar la matriz exacta usando tensores nativos de PyTorch.
+\end_layout
+
+\begin_layout Standard
+Vamos a simular un paso de mensaje convolucional en una pequeña red de tres equipos interconectados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,caption={Paso de mensajes en una GCN usando PyTorch}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import torch
+\end_layout
+
+\begin_layout Plain Layout
+
+import torch.nn as nn
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- 1.
+ Definicion de la Topologia ---
+\end_layout
+
+\begin_layout Plain Layout
+
+# Grafo de 3 nodos (0:
+ Tablero,
+ 1:
+ Motor A,
+ 2:
+ Motor B)
+\end_layout
+
+\begin_layout Plain Layout
+
+# Conexiones:
+ Tablero <-> Motor A,
+ Motor A <-> Motor B
+\end_layout
+
+\begin_layout Plain Layout
+
+A = torch.tensor([[0.,
+ 1.,
+ 0.],
+\end_layout
+
+\begin_layout Plain Layout
+
+                  [1.,
+ 0.,
+ 1.],
+\end_layout
+
+\begin_layout Plain Layout
+
+                  [0.,
+ 1.,
+ 0.]])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Anadimos auto-enlaces (Matriz Identidad) para que cada nodo recuerde su propio estado
+\end_layout
+
+\begin_layout Plain Layout
+
+I = torch.eye(3)
+\end_layout
+
+\begin_layout Plain Layout
+
+A_tilde = A + I
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- 2.
+ Normalizacion Simetrica ---
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculamos el grado de cada nodo (cuantas conexiones tiene,
+ incluyendo el autoenlace)
+\end_layout
+
+\begin_layout Plain Layout
+
+grados = A_tilde.sum(dim=1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Matriz diagonal D_tilde^(-1/2)
+\end_layout
+
+\begin_layout Plain Layout
+
+D_tilde_inv_sqrt = torch.diag(torch.pow(grados,
+ -0.5))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculamos el operador de paso de mensajes:
+ D^(-1/2) * A_tilde * D^(-1/2)
+\end_layout
+
+\begin_layout Plain Layout
+
+operador_convolucional = torch.matmul(torch.matmul(D_tilde_inv_sqrt,
+ A_tilde),
+ D_tilde_inv_sqrt)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print("Operador Convolucional Normalizado:")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(np.round(operador_convolucional.numpy(),
+ 3))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- 3.
+ Datos de los Nodos (Matriz H) ---
+\end_layout
+
+\begin_layout Plain Layout
+
+# Supongamos 2 caracteristicas por equipo:
+ [Temperatura,
+ Nivel de Vibracion]
+\end_layout
+
+\begin_layout Plain Layout
+
+H_l = torch.tensor([[45.0,
+ 0.1],
+  # Tablero (frio,
+ sin vibracion)
+\end_layout
+
+\begin_layout Plain Layout
+
+                    [80.0,
+ 2.5],
+  # Motor A (caliente,
+ vibrando mucho)
+\end_layout
+
+\begin_layout Plain Layout
+
+                    [50.0,
+ 0.5]]) # Motor B (normal)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- 4.
+ Parametros Entrenables (Matriz W) ---
+\end_layout
+
+\begin_layout Plain Layout
+
+# Proyectamos de 2 caracteristicas a 3 caracteristicas latentes (ocultas)
+\end_layout
+
+\begin_layout Plain Layout
+
+W_l = nn.Parameter(torch.rand(2,
+ 3))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- 5.
+ APLICACION DE LA ECUACION (7) ---
+\end_layout
+
+\begin_layout Plain Layout
+
+# H^(l+1) = sigma( D^(-1/2) A_tilde D^(-1/2) H^(l) W^(l) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# a.
+ Paso de mensajes (Los nodos mezclan su estado con sus vecinos)
+\end_layout
+
+\begin_layout Plain Layout
+
+mezcla_vecinal = torch.matmul(operador_convolucional,
+ H_l)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# b.
+ Transformacion lineal (Aprendizaje)
+\end_layout
+
+\begin_layout Plain Layout
+
+transformacion = torch.matmul(mezcla_vecinal,
+ W_l)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# c.
+ Activacion no lineal (sigma)
+\end_layout
+
+\begin_layout Plain Layout
+
+H_l_mas_1 = torch.relu(transformacion)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print("
+\backslash
+nMatriz de Caracteristicas de Entrada H^(l):")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(H_l)
+\end_layout
+
+\begin_layout Plain Layout
+
+print("
+\backslash
+nNuevo Estado Oculto de los Nodos H^(l+1):")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(H_l_mas_1.detach().numpy())
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+¿Qué está sucediendo aquí físicamente?
+\end_layout
+
+\begin_layout Standard
+Si observas la 
+\family typewriter
+mezcla_vecinal
+\family default
+ antes de la transformación lineal,
+ verías que el Motor B (que originalmente estaba a 
+\begin_inset Formula $50^{\circ}$
+\end_inset
+
+C y 
+\begin_inset Formula $0.5$
+\end_inset
+
+ de vibración) absorbió matemáticamente parte de las características del Motor A.
+ La red neuronal acaba de modelar la transferencia térmica y armónica a través del acople estructural.
+\end_layout
+
+\begin_layout Standard
+Al apilar múltiples capas (repitiendo esta ecuación),
+ el nodo 
+\begin_inset Formula $0$
+\end_inset
+
+ recibe información del nodo 
+\begin_inset Formula $2$
+\end_inset
+
+ a través del nodo 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Es decir,
+ con 
+\begin_inset Formula $k$
+\end_inset
+
+ capas convolucionales,
+ cada nodo adquiere 
+\begin_inset Quotes fls
+\end_inset
+
+conciencia
+\begin_inset Quotes frs
+\end_inset
+
+ geométrica de todos los componentes que están a 
+\begin_inset Formula $k$
+\end_inset
+
+ saltos de distancia.
+\end_layout
+
+\begin_layout Standard
+Para consolidar esta abstracción matemática,
+ he diseñado un simulador donde puedes observar cómo los valores numéricos se promedian y propagan por la red topológica en cada iteración del paso de mensajes.
+\end_layout
+
+\end_body
+\end_document
